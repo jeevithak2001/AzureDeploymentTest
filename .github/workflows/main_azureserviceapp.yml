@@ -34,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: java-app
-          path: '${{ github.workspace }}/target/*.jar'
+          path: build/libs/*.jar
 
   deploy:
     runs-on: windows-latest
@@ -55,3 +55,4 @@ jobs:
           package: 'azureDemo-0.0.1-SNAPSHOT.jar'
 
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_CFDDA7EE067C4359A650AC10CD9C4175 }}
+
